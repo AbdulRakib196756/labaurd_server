@@ -12,7 +12,10 @@ const createcarts = async (req, res) => {
 };
 const getallcart = async (req, res) => {
   try {
-    const cart = await Cart.find().lean();
+    const email = req.query.email;
+    const cart = await Cart.find({ useremail: email })
+      .populate("menuid")
+      .lean();
     res.status(200).json(cart);
   } catch (error) {
     console.log(error);
