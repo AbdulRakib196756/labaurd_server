@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const app = require(".");
-const PORT = 5000;
+const PORT = 8000;
 async function main() {
   try {
     await mongoose.connect(process.env.DATABASEURL);
