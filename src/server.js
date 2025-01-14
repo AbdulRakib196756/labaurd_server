@@ -3,7 +3,9 @@ const app = require(".");
 const PORT = 8000;
 async function main() {
   try {
-    await mongoose.connect(process.env.DATABASEURL);
+    await mongoose.connect(
+      "mongodb+srv://rakib:rakib196756@cluster0.7lrdivs.mongodb.net/Labgaurd?retryWrites=true&w=majority"
+    );
     console.log("Connected to MongoDB");
 
     app.listen(PORT, () => {
